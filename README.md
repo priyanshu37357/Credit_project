@@ -1,2 +1,2 @@
 # Credit_project
-This is my credit preiction project 
+This is my credit prediction project 
