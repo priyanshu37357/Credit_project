@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Approval Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f1f8e9;
+            padding: 40px;
+        }
+        label, input, select {
+            display: block;
+            margin-top: 10px;
+            width: 300px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            width: 150px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>💳 Credit Approval Prediction</h2>
+    <form action="/project" method="POST">
+        <label>Age:</label>
+        <input type="number" name="age" required>
+
+        <label>Job:</label>
+        <select name="job" required>
+            <option value="0">admin.</option>
+            <option value="1">technician</option>
+            <option value="2">services</option>
+            <option value="3">management</option>
+            <option value="4">retired</option>
+            <option value="5">blue-collar</option>
+            <option value="6">unemployed</option>
+            <option value="7">entrepreneur</option>
+            <option value="8">housemaid</option>
+            <option value="9">student</option>
+            <option value="10">self-employed</option>
+            <option value="11">unknown</option>
+        </select>
+
+        <label>Marital Status:</label>
+        <select name="marital" required>
+            <option value="0">married</option>
+            <option value="1">single</option>
+            <option value="2">divorced</option>
+        </select>
+
+        <label>Education:</label>
+        <select name="education" required>
+            <option value="0">primary</option>
+            <option value="1">secondary</option>
+            <option value="2">tertiary</option>
+            <option value="3">unknown</option>
+        </select>
+
+        <label>Balance:</label>
+        <input type="number" name="balance" required>
+
+        <label>Housing:</label>
+        <select name="housing" required>
+            <option value="1">yes</option>
+            <option value="0">no</option>
+        </select>
+
+        <label>Duration:</label>
+        <input type="number" name="duration" required>
+
+        <label>Campaign:</label>
+        <input type="number" name="campaign" required>
+
+        <button type="submit">Check Approval</button>
+    </form>
+
+    {% if prediction is not none %}
+        <h3>📊 Prediction Result: <strong>{{ prediction }}</strong></h3>
+    {% endif %}
+
+</body>
+</html>
